@@ -1,0 +1,161 @@
+﻿<Window x:Class="WpfMVVM.DataBinding.Views.LesControles"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:viewmodels="clr-namespace:WpfMVVM.DataBinding.ViewModels"
+		xmlns:sys="clr-namespace:System;assembly=mscorlib"
+		mc:Ignorable="d"
+		Title="LesControles"
+		Height="1080"
+		Width="960">
+
+
+	<Window.DataContext>
+		<viewmodels:LesControlesViewModel />
+	</Window.DataContext>
+
+
+	<Grid Name="mainWindow">
+
+		<ScrollViewer>
+
+			<StackPanel>
+
+				<TextBlock Name="textMessage"
+						   Text="{Binding Test}"
+						   Width="140"
+						   Height="20"
+						   HorizontalAlignment="Left"
+						   Margin="60, 30, 0, 0"
+						   VerticalAlignment="Top"
+						   Background="Cyan" />
+
+				<TextBox Name="maTextBoxBindable"
+						 Text="{Binding Test, UpdateSourceTrigger=PropertyChanged}" />
+
+				<TextBlock Name="textBlock1"
+						   Text="Champ vide à changer" />
+
+				<TextBlock Name="textBlock2">
+			<Italic>Champ</Italic> vide à <Bold><Span Foreground="PaleVioletRed">changer</Span></Bold>
+				</TextBlock>
+
+				<Button Command="{Binding EditTest}">Le texte va changer grace à un Binding</Button>
+
+				<Label Name="monLabel"
+					   Content="Mon label"
+					   Height="30"
+					   HorizontalAlignment="Left"
+					   VerticalAlignment="Top" />
+
+				<RichTextBox Name="maRichTextBox"
+							 SpellCheck.IsEnabled="False" />
+
+				<Button Name="premierBoutton">
+
+					<StackPanel>
+
+						<Image x:Name="monImage"
+							   Stretch="Fill"
+							   Width="160"
+							   Height="100"
+							   Source="../Resources/marie.jpg" />
+
+						<TextBlock>Veuillez cliquer je sais pas pourquoi :)</TextBlock>
+
+					</StackPanel>
+
+				</Button>
+
+				<StackPanel Name="choixTechno"
+							Orientation="Horizontal">
+
+					<RadioButton Name="radioButton1"
+								 Content="WPF"
+								 Height="16"
+								 Margin="5, 5" />
+					<RadioButton Name="radioButton2"
+								 Content="MAUI"
+								 Height="16"
+								 Margin="5, 5" />
+
+				</StackPanel>
+
+				<ComboBox>
+
+					<ComboBoxItem Content="Choix 1"
+								  IsEnabled="True"
+								  IsSelected="False" />
+					<ComboBoxItem Content="Choix 2"
+								  IsEnabled="False"
+								  IsSelected="False" />
+					<ComboBoxItem Content="Choix 3"
+								  IsEnabled="True"
+								  IsSelected="True" />
+
+				</ComboBox>
+
+				<ListBox>
+
+					<ListBoxItem Content="Choix 1"
+								 IsEnabled="True"
+								 IsSelected="False" />
+					<ListBoxItem Content="Choix 2"
+								 IsEnabled="False"
+								 IsSelected="False" />
+					<ListBoxItem Content="Choix 3"
+								 IsEnabled="True"
+								 IsSelected="True" />
+
+				</ListBox>
+
+				<!--marche pas :(-->
+				<!--<MediaElement  LoadedBehavior="Play"
+						   Stretch="Uniform"
+						   Width="160"
+						   Height="120"
+						   Source="../Resources/video_planete.avi" />-->
+
+				<StackPanel Orientation="Horizontal">
+
+					<Calendar SelectionMode="MultipleRange"
+							  DisplayDate="01/01/2021"
+							  DisplayDateEnd="01/31/2021">
+
+						<Calendar.BlackoutDates>
+							<CalendarDateRange Start="01/15/2021"
+											   End="01/16/2021" />
+						</Calendar.BlackoutDates>
+
+						<Calendar.SelectedDates>
+							<sys:DateTime>01/10/2021</sys:DateTime>
+							<sys:DateTime>01/11/2021</sys:DateTime>
+						</Calendar.SelectedDates>
+
+					</Calendar>
+
+					<DatePicker DisplayDate="01/01/2021"
+								DisplayDateEnd="01/31/2021">
+
+						<DatePicker.BlackoutDates>
+							<CalendarDateRange Start="01/15/2021"
+											   End="01/16/2021" />
+						</DatePicker.BlackoutDates>
+
+						<DatePicker.SelectedDate>
+							<sys:DateTime>01/10/2021</sys:DateTime>
+						</DatePicker.SelectedDate>
+
+					</DatePicker>
+
+				</StackPanel>
+
+			</StackPanel>
+
+		</ScrollViewer>
+
+	</Grid>
+
+
+</Window>
