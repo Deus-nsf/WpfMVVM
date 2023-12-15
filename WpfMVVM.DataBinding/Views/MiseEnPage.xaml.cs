@@ -17,7 +17,7 @@ namespace WpfMVVM.DataBinding.Views
     /// <summary>
     /// Interaction logic for MiseEnPage.xaml
     /// </summary>
-    public partial class MiseEnPage : Window
+    public partial class MiseEnPage : UserControl
     {
         public MiseEnPage()
         {

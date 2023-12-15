@@ -12,19 +12,8 @@
 	<TabControl Name="monTabControl"
 				Margin="15">
 
-		<TabItem Name="LesControles">
-			<Frame Source="LesControles.xaml"
-				   Content="Les Controles"/>
-		</TabItem>
-
-		<TabItem Name="LesControles2">
-			<Frame Source="LesControles.xaml"
-				   Content="Les Controles" />
-		</TabItem>
-
-		<TabItem Name="LesControles3">
-			<Frame Source="LesControles.xaml"
-				   Content="Les Controles" />
+		<TabItem Name="LesControles" Header="test tab">
+			<Frame Source="LesControles.xaml" />
 		</TabItem>
 
 	</TabControl>

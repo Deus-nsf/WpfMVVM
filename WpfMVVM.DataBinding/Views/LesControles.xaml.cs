@@ -17,7 +17,7 @@ namespace WpfMVVM.DataBinding.Views
     /// <summary>
     /// Interaction logic for LesControles.xaml
     /// </summary>
-    public partial class LesControles : Window
+    public partial class LesControles : UserControl
     {
         public LesControles()
         {
